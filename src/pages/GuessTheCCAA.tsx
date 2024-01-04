@@ -4,6 +4,7 @@ import { MapContainer, Marker, TileLayer, useMapEvents } from "react-leaflet";
 import { coordenadas } from "../ccaa";
 import * as turf from "@turf/turf";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 interface Position {
   lat: number;
@@ -49,10 +50,12 @@ function ClickHandler({
       const estaDentro = turf.inside(puntoLeaflet, poligono);
 
       if (estaDentro) {
-        alert("¡Respuesta correcta!");
-        navigate("/home");
+        toast.success("Respuesta correcta 😁");
+        setTimeout(() => {
+          navigate("/home");
+        }, 1500);
       } else {
-        alert("Respuesta incorrecta");
+        toast.error("Respuesta incorrecta 😢");
       }
       setMarkerPosition({ lat: e.latlng.lat, lng: e.latlng.lng });
     },

@@ -2,6 +2,7 @@ import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { images } from "../images";
 import "./GuessTheImage.css";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const GuessTheImage = () => {
   const navigate = useNavigate();
@@ -43,10 +44,12 @@ const GuessTheImage = () => {
       response === "acampar" ||
       response === "tienda de campaña"
     ) {
-      alert("¡Respuesta correcta!");
-      navigate("/home");
+      toast.success("Respuesta correcta 😁");
+      setTimeout(() => {
+        navigate("/home");
+      }, 1500);
     } else {
-      alert("Respuesta incorrecta");
+      toast.error("Respuesta incorrecta 😢");
     }
   };
 

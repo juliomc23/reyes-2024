@@ -15,6 +15,7 @@ const Home = () => {
 
   const nextMessage = () => {
     if (currentMessageId >= conversation.length - 1) {
+      localStorage.setItem("messageId", JSON.stringify(0));
       return;
     }
     if (currentMessageId === 10) {
