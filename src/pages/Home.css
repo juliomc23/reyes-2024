@@ -1,0 +1,42 @@
+.home {
+  border: 1px solid red;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.conversation {
+  min-height: 10rem;
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 1rem;
+  background-color: rgb(255, 233, 237);
+
+  .conversation__text {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .conversation__buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+
+    .message__button {
+      all: unset;
+    }
+  }
+}
+
+.oiluj {
+  width: 17.5rem;
+}
