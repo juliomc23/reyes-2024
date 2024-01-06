@@ -11,6 +11,11 @@ const GuessTheImage = () => {
   const [seeForm, setSeeForm] = useState(false);
   const [response, setResponse] = useState("");
 
+  const imagePath = new URL(
+    `/src/assets/pixelados/${images[imageIndex]}.png`,
+    import.meta.url
+  ).toString();
+
   const nextImage = () => {
     if (imageIndex >= images.length - 1) {
       setDisplayForm(true);
@@ -69,11 +74,7 @@ const GuessTheImage = () => {
             !displayForm ? "" : "hidden__image--container"
           } guess-the-image__image-container`}
         >
-          <img
-            src={`/src/assets/pixelados/${images[imageIndex]}.png`}
-            alt="gift"
-            className="guess-the-image__image"
-          />
+          <img src={imagePath} alt="gift" className="guess-the-image__image" />
           <article className="guess-the-image__buttons">
             <button onClick={previousImage} className="guess-the-image__button">
               Anterior imagen
