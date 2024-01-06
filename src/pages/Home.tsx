@@ -3,6 +3,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import conversation from "../conversation";
+import Oiluj from "../assets/Oiluj-fondo.png";
 import "./Home.css";
 
 const Home = () => {
@@ -66,7 +67,7 @@ const Home = () => {
           </button>
         </div>
       </section>
-      <img src="/src/assets/Oiluj-fondo.png" alt="Oiluj" className="oiluj" />
+      <img src={Oiluj} alt="Oiluj" className="oiluj" />
     </section>
   );
 };
